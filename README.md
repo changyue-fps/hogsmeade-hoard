@@ -102,7 +102,7 @@ PUT
 
 ### Auth
 
-Yes. It will include authentication. 
+Yes. It will include authentication. I will use JWT to menage user session and to ensure users only get authorized information, and performing authorized operations.
 
 ## Roadmap
 
