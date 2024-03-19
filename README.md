@@ -38,7 +38,7 @@ Express
 
 Mysqls
 
-Passport.js - authentication
+JWT
 
 
 ### APIs
@@ -54,7 +54,7 @@ The project will not be using external source API.
 **Signup page**: For user to enter information to signup.
 
 **Shop pages**: A shop page include an introduction of the shop and a list of all merchandise available in that shop. Each merchaandise can be clicked to view details. 
-- Shops includes Honeyduke, Weasleys' Wizard Wheezes, Zonko's Joke Shop, Scrivenshaft's Quill Shop
+- Shops includes Honeydukes, Weasleys' Wizard Wheezes, Zonko's Joke Shop, Scrivenshaft's Quill Shop
 
 **Merchandise Details page**: This page includes the merchandise images, descriptions and price.
 
