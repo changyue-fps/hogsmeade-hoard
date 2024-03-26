@@ -1,0 +1,29 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/global" as *;
+
+.menu {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 300px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 8;
+    background-image: url("../../assets/images/parchment.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  .menu ul li {
+    list-style: none;
+  }
+  .menu-item{
+    text-decoration: none;
+    font-size: 24px;
+    color: #111;
+  }
+  .menu ul li a:hover {
+    color: white;
+  }

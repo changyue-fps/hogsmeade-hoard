@@ -1,0 +1,15 @@
+@use "./typography" as *;
+@use "./variables" as *;
+@use "./mixins" as *;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+    font-family: $font-text;
+    margin: 0;
+    padding: 0;
+  }
