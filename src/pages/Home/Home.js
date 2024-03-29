@@ -15,7 +15,7 @@ function Home() {
 
   return (
     <section>
-      <section className={isToggleActive ? "home-wrapper active" : "home-wrapper"}>
+      <section className={isToggleActive ? "wrapper active" : "wrapper"}>
         {/* TODO: ADD BACK LOOP TO VIDEO !!!!!!!!!!!!!! */}
         <video className="bgvideo" src={bgVideo} muted loop autoPlay></video>
         <div className="overlay"></div>
@@ -33,7 +33,7 @@ function Home() {
               the worlds between the seen and unseen. Your adventure begins
               here.
             </p>
-            <button className="hero__btn">Explore</button>
+            <Link className="hero__btn" to={"/shop"}>Explore</Link>
           </section>
         </section>
       </section>

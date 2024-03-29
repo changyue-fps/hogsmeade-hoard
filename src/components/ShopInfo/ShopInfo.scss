@@ -1,0 +1,16 @@
+.shop-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    &__image {
+        margin-right:48px;
+        max-width: 200px;
+        max-height: 200px;
+    }
+    &__intro{
+        color: white;
+        width: 70%;
+    }
+}
+
