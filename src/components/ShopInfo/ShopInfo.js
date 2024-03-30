@@ -3,7 +3,6 @@ import "./ShopInfo.scss";
 function ShopInfo({shop}) {
     const logo = process.env.REACT_APP_BASE_URL + shop.logo;
 
-    console.log(logo);
     return (
         <section className="shop-info">
             <img className="shop-info__image" src={logo} />

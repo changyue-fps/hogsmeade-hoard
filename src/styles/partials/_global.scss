@@ -24,6 +24,17 @@ body {
     }
   }
 
+  .wrapper-main {
+    background-color: white;
+    right: 0;
+    position: relative;
+    width: 100%;
+    transition: 0.5s;
+    &.active {
+      right: 300px;
+    }
+  }
+
   .link {
     text-decoration: none;
   }

@@ -14,6 +14,7 @@ function Shop() {
   const [isToggleActive, setIsToggleActive] = useState(false);
   const [shops, setShops] = useState([]);
   const [activeShop, setActiveShop] = useState(null);
+  const [products, setProducts] = useState([]);
   const params = useParams();
   
   useEffect(() => {
@@ -36,11 +37,15 @@ function Shop() {
             try {
                 if (Object.keys(params).length > 0) {
                     const resultShop = await api.getShop(params.id);
+                    const resultProducts = await api.getProducts(params.id);
                     setActiveShop(resultShop);
+                    setProducts(resultProducts);
                 } else {
                     console.log(shops[0].id);
                     const resultShop = await api.getShop(shops[0].id);
+                    const resultProducts = await api.getProducts(shops[0].id);
                     setActiveShop(resultShop);
+                    setProducts(resultProducts);
                 }
             } catch (error) {
                 console.error(error);
@@ -54,14 +59,13 @@ function Shop() {
     setIsToggleActive(!isToggleActive);
   };
 
-  console.log(shops.length > 0 && shops[0].id);
-  console.log(Object.keys(params).length);
-  console.log(activeShop);
+  console.log(products);
   return (
     <div>
-      <section className={isToggleActive ? "wrapper active" : "wrapper"}>
+      <section className={isToggleActive ? "wrapper-main active" : "wrapper-main"}>
         <img className="bg" src={bg} />
         <div className="bg-overlay"></div>
+        <div className="bg-white"></div>
         <section className="shop">
           <Header isToggleActive={isToggleActive} toggle={toggleClass} />
 
@@ -75,7 +79,7 @@ function Shop() {
           {activeShop && <ShopInfo shop = {activeShop}/>}
           </section>
 
-          {activeShop && <ShopList shop = {activeShop}/>}
+          {activeShop && <ShopList products = {products}/>}
 
         </section>
       </section>
