@@ -3,16 +3,34 @@ import { useEffect, useState } from "react";
 import Menu from "../../components/Menu/Menu";
 import Header from "../../components/Header/Header";
 import bg from "../../assets/images/bg-img.jpeg";
+import back from "../../assets/icons/back.png";
 import Api from "../../utils/Api";
 import "./Product.scss";
-import "../Shop/Shop.scss";
+import ImageGallery from "../../components/ImageGallery/ImageGallery";
 
 function Product() {
-    const [isToggleActive, setIsToggleActive] = useState(false);
+  const theId = useParams().id;
+  const [isToggleActive, setIsToggleActive] = useState(false);
+  const [product, setProduct] = useState(null);
 
-    const toggleClass = () => {
-        setIsToggleActive(!isToggleActive);
-      };
+  useEffect(() => {
+    const api = new Api();
+    const getProduct = async () => {
+      try {
+        const productResult = await api.getProduct(theId);
+        setProduct(productResult);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+    getProduct();
+  }, []);
+
+  const toggleClass = () => {
+    setIsToggleActive(!isToggleActive);
+  };
+
+  console.log(product);
   return (
     <div>
       <section
@@ -24,11 +42,24 @@ function Product() {
         <section className="product">
           <Header isToggleActive={isToggleActive} toggle={toggleClass} />
 
-          <section className="product-details">
-            
-          </section>
-
-        
+          {product && (
+            <section className="product-details">
+                <img className="product-details__back" src={back}/>
+              <div className="product-main">
+                <ImageGallery images={product.images} />
+                <section className="product-main__right">
+                  <h2>{product.product_name}</h2>
+                  <p>{product.description}</p>
+                  <div className="price">
+                  {product.price_g!==0 && <p className="product-card__price__g">{product.price_g} Galleons</p>}
+                {product.price_s!=0 && <p className="product-card__price__g">{product.price_s} Sickles</p>}
+                {product.price_c!=0 && <p className="product-card__price__g">{product.price_c} Knuts</p>}
+                  </div>
+                  <button>+ Add</button>
+                </section>
+              </div>
+            </section>
+          )}
         </section>
       </section>
 
