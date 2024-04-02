@@ -1,0 +1,17 @@
+.shop-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 18px;
+    width: 80%;
+    &__image {
+        margin-right:48px;
+        width: 120px;
+        height: 120px;
+    }
+    &__intro{
+        color: white;
+        width: 70%;
+    }
+}
+

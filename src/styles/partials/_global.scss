@@ -1,0 +1,72 @@
+@use "./typography" as *;
+@use "./variables" as *;
+@use "./mixins" as *;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+    font-family: $font-text;
+    margin: 0;
+    padding: 0;
+  }
+
+  .wrapper {
+    right: 0;
+    position: relative;
+    width: 100%;
+    transition: 0.5s;
+    &.active {
+      right: 300px;
+    }
+  }
+
+  .wrapper-main {
+    background-color: white;
+    right: 0;
+    position: relative;
+    width: 100%;
+    transition: 0.5s;
+    &.active {
+      right: 300px;
+    }
+  }
+
+  .link {
+    text-decoration: none;
+  }
+
+  .bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80%;
+    object-fit: cover;
+    opacity: 1;
+    z-index: 9;
+  }
+  
+  .bg-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 9;
+  }
+  
+  .bg-white {
+    background-color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 8;
+  }
+  

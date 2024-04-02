@@ -1,0 +1,37 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/global" as *;
+
+.header {
+    display: flex;
+    justify-content: space-between;
+  
+    &__title {
+      font-family: $font-logo;
+      color: white;
+      margin: 0;
+      font-size: 50px;
+    }
+  
+    &__menu {
+      width: 26px;
+      height: 26px;
+    }
+  }
+
+  .toggle {
+    // position: relative;
+    width: 50px;
+    height: 50px;
+    background: url(https://i.ibb.co/HrfVRcx/menu.png);
+    background-repeat: no-repeat;
+    background-size: 30px;
+    background-position: center;
+    cursor: pointer;
+  }
+  .toggle.active {
+    background: url(https://i.ibb.co/rt3HybH/close.png);
+    background-repeat: no-repeat;
+    background-size: 25px;
+    background-position: center;
+    cursor: pointer;
+  }
