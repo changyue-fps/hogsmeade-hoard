@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./ShopListItem.scss";
 
 function ShopListItem({product}) {
@@ -7,6 +8,7 @@ function ShopListItem({product}) {
     
     console.log(product.price)
     return (
+        <Link className="product-link" to={`/product/${product.id}`}>
         <section className="product-card">
             <div className="product-card__image-wrapper"><img className="product-card__image" src={mainImageUrl}/></div>
             <h3 className="product-card__name">{product.product_name}</h3>
@@ -16,6 +18,7 @@ function ShopListItem({product}) {
                 {product.price_c!=0 && <p className="product-card__price__g">{product.price_c} Knuts</p>}
             </div>
         </section>
+        </Link>
     );
 }
 

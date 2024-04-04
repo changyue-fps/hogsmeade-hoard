@@ -5,10 +5,10 @@ import Header from "../../components/Header/Header";
 import bg from "../../assets/images/bg-img.jpeg";
 import back from "../../assets/icons/back.png";
 import Api from "../../utils/Api";
-import "./Login.scss";
-import LoginForm from "../../components/LoginForm/LoginForm";
+import "./Signup.scss";
+import SignupForm from "../../components/SignupForm/SignupForm";
 
-function Login() {
+function Signup() {
   const [isToggleActive, setIsToggleActive] = useState(false);
   
   useEffect(() => {
@@ -29,11 +29,11 @@ function Login() {
         <img className="bg" src={bg} />
         <div className="bg-overlay"></div>
         <div className="bg-white"></div>
-        <section className="login">
+        <section className="signup">
           <Header isToggleActive={isToggleActive} toggle={toggleClass} />
 
-          <section className="login-main">
-            <LoginForm />
+          <section className="signup-main">
+            <SignupForm />
           </section>
         </section>
       </section>
@@ -43,4 +43,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default Signup;

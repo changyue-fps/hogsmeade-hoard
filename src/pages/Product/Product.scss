@@ -42,4 +42,23 @@
 
   .price {
     display: flex;
+
+    &__g{
+      margin-right: 16px;
+    }
+  }
+
+  .product-btn{
+    margin-top: 20px;
+    height: 22px;
+    width: 200px;
+    background-color: rgb(226, 215, 199);
+    border: 1px solid rgb(45, 28, 5);
+    font-family: $font-title;
+    border-radius: 4px;
+
+    &:hover {
+        background-color: rgb(205, 168, 108);
+        color: white;
+    }
   }

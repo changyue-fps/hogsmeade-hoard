@@ -1,7 +1,7 @@
 @use "../../styles/partials/variables" as *;
 @use "../../styles/partials/global" as *;
 
-.login-form {
+.signup-form {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -20,11 +20,11 @@
     }
 }
 
-.lable {
+.signup-lable {
     margin-right: 5px;
 }
 
-.box {
+.signup-box {
     border: 1px solid rgb(45, 28, 5);
     height: 22px;
     border-radius: 4px;
@@ -32,7 +32,7 @@
     padding-left: 6px;
 }
 
-.btn {
+.signup-btn {
     margin-top: 20px;
     height: 22px;
     width: 100px;
